@@ -8,8 +8,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * @author Muxuan
- * @email muxuanchan@gmail.com
+ * @author Haixiang
+ * @email haixiang7c6@gmail.com
  * @since 2020-02-29
  */
 public class FutureUtils {

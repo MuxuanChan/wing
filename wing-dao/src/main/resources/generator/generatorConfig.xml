@@ -1,0 +1,63 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="simple" targetRuntime="MyBatis3">
+        <!-- 此处是将UserMapper改名为UserDao 接口 当然 想改成什么都行~  -->
+        <plugin type="com.ypsx.plugin.RenameJavaMapperPlugin">
+            <property name="searchString" value="Mapper$"/>
+            <property name="replaceString" value="Dao"/>
+        </plugin>
+
+        <!-- 此处是将UserMapper.xml改名为UserDao.xml 当然 想改成什么都行~ -->
+        <plugin type="com.ypsx.plugin.RenameXmlMapperPlugin">
+            <property name="searchString" value="Mapper"/>
+            <property name="replaceString" value="Dao"/>
+        </plugin>
+
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$"/>
+            <property name="replaceString" value="Query"/>
+        </plugin>
+
+        <!-- 分页插件-->
+        <plugin type="com.ypsx.plugin.MySQLLimitPlugin"/>
+
+        <commentGenerator>
+            <property name="addRemarkComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!-- 数据库表配置信息-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://***/***"
+                        userId="***"
+                        password="***"/>
+
+        <javaModelGenerator targetPackage="com.ypsx.wms.biz.entity.turnovergoods" targetProject="src/main/java"/>
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="com.ypsx.wms.biz.dao.turnovergoods" targetProject="src/main/java"/>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ypsx.wms.biz.dao.turnovergoods"
+                             targetProject="src/main/java"/>
+
+        <table tableName="turnover_goods">
+            <domainObjectRenamingRule searchString="^Mapper" replaceString="Dao"/>
+        </table>
+        <table tableName="turnover_goods_inventory_change_log">
+            <domainObjectRenamingRule searchString="^Mapper" replaceString="Dao"/>
+        </table>
+        <table tableName="turnover_goods_operation_detail">
+            <domainObjectRenamingRule searchString="^Mapper" replaceString="Dao"/>
+        </table>
+        <table tableName="turnover_goods_operation_record">
+            <domainObjectRenamingRule searchString="^Mapper" replaceString="Dao"/>
+        </table>
+        <table tableName="turnover_goods_seq_record">
+            <domainObjectRenamingRule searchString="^Mapper" replaceString="Dao"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
+

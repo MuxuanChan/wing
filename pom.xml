@@ -12,6 +12,7 @@
 
     <modules>
         <module>wing-utils</module>
+        <module>wing-dao</module>
     </modules>
 
     <properties>

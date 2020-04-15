@@ -9,6 +9,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.function.BinaryOperator;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -432,5 +433,22 @@ public class StreamUtils {
             return 0L;
         }
         return collection.stream().count();
+    }
+
+    /**
+     * 先处理再统计
+     */
+    public static <T, S> Long count(Collection<T> collection, Function<T, S> convertFunction) {
+        if (CollectionUtils.isEmpty(collection)) {
+            return 0L;
+        }
+        return collection.stream().map(convertFunction).count();
+    }
+
+    /**
+     * 循环处理
+     */
+    public static <T> void forEach(Collection<T> collection, Consumer<? super T> action) {
+        collection.stream().forEach(action);
     }
 }

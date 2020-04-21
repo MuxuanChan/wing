@@ -43,18 +43,27 @@
                              targetProject="src/main/java"/>
 
         <table tableName="turnover_goods">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <domainObjectRenamingRule searchString="^Mapper" replaceString="Dao"/>
+        </table>
+        <table tableName="turnover_goods_inventory">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <domainObjectRenamingRule searchString="^Mapper" replaceString="Dao"/>
         </table>
         <table tableName="turnover_goods_inventory_change_log">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <domainObjectRenamingRule searchString="^Mapper" replaceString="Dao"/>
         </table>
         <table tableName="turnover_goods_operation_detail">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <domainObjectRenamingRule searchString="^Mapper" replaceString="Dao"/>
         </table>
         <table tableName="turnover_goods_operation_record">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <domainObjectRenamingRule searchString="^Mapper" replaceString="Dao"/>
         </table>
         <table tableName="turnover_goods_seq_record">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <domainObjectRenamingRule searchString="^Mapper" replaceString="Dao"/>
         </table>
 

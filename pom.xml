@@ -19,7 +19,7 @@
         <revision>0.0.1</revision>
         <spring.version>5.2.4.RELEASE</spring.version>
         <lombok.version>1.18.12</lombok.version>
-        <guava.version>28.2-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <slf4j.version>1.7.30</slf4j.version>
     </properties>
 
